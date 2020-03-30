@@ -1,0 +1,23 @@
+header:
+    version: 8
+
+repos:
+    meta-smarthome:
+      path: "${TOPDIR}/../meta-smarthome"
+    poky:
+     url: "https://git.yoctoproject.org/git/poky"
+     refspec: "zeus"
+     layers:
+        meta:
+        meta-poky:
+        meta-yocto-bsp:
+    meta-freescale:
+     url: "https://github.com/Freescale/meta-freescale.git"
+     refspec: "zeus"
+
+local_conf_header:
+    sstate_mirrors: |
+        SSTATE_MIRRORS = "\
+            file://.* http://sstate.yoctoproject.org/dev/PATH;downloadfilename=PATH \n \
+            file://.* http://sstate.yoctoproject.org/3.0.2/PATH;downloadfilename=PATH \n \
+            "

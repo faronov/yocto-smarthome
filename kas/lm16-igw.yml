@@ -1,0 +1,18 @@
+header:
+    # version of configuration file syntax
+    version: 8
+    includes:
+      - include/repos-zeus.yml
+
+machine: lm16-igw
+
+# TODO: use custom distro
+distro: poky
+# TODO: use custom image
+target: core-image-minimal
+
+# a string that is added to the local.conf
+local_conf_header:
+    default: |
+        INHERIT += "extrausers"
+        EXTRA_USERS_PARAMS = "usermod -P password root;"
